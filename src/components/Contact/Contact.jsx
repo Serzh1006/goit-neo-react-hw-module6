@@ -1,6 +1,10 @@
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsSlice";
 import css from "./contact.module.css";
 
-const Contact = ({ data: { name, number, id }, deleteF }) => {
+const Contact = ({ data: { name, number, id } }) => {
+  const dispatch = useDispatch();
+
   return (
     <li>
       <div className={css.wrapContact}>
@@ -10,7 +14,7 @@ const Contact = ({ data: { name, number, id }, deleteF }) => {
         </div>
         <button
           className={css.btnDelete}
-          onClick={() => deleteF(id)}
+          onClick={() => dispatch(deleteContact(id))}
           type="button"
         >
           Delete
