@@ -13,7 +13,7 @@ const App = () => {
       <h1 className={css.primaryTitle}>Phonebook</h1>
       <ContactForm />
       <SearchBox />
-      {contactsFromState.length !== 0 ? (
+      {contactsFromState.contacts.length !== 0 ? (
         <ContactList />
       ) : (
         <p className={css.messageList}>No records found yet!</p>
